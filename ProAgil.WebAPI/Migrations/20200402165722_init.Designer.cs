@@ -8,7 +8,7 @@ using ProAgil.WebAPI.Data;
 namespace ProAgil.WebAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200331224425_init")]
+    [Migration("20200402165722_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,8 @@ namespace ProAgil.WebAPI.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("DataEvento");
+
+                    b.Property<string>("Img");
 
                     b.Property<string>("Local");
 
