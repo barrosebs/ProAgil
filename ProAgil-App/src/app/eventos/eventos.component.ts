@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-eventos',
@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class EventosComponent implements OnInit {
 
-  _filtroLista: string;
+  _filtroLista: any;
   get filtroLista(): string{
     return this._filtroLista;
   }
@@ -30,8 +30,7 @@ export class EventosComponent implements OnInit {
   filtrarEvento(filtrarPor: string): any{
     filtrarPor = filtrarPor.toLocaleLowerCase();
     return this.eventos.filter(
-      evento => evento.tema.toLocaleLowerCase().indexOf(filtrarPor) !== -1
-    );
+      (evento: { tema: string; }) => evento.tema.toLocaleLowerCase().indexOf(filtrarPor));
   }
 
   alternarImagem()

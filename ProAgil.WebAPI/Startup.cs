@@ -21,32 +21,32 @@ namespace ProAgil.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ProAgilContext>(x => 
+            services.AddDbContext<ProAgilContext>(x =>
                 x.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))
                 );
             services.AddScoped<IProAgilRepository, ProAgilRepository>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc();
             services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-           if (env.IsDevelopment())
-        {
-            app.UseDeveloperExceptionPage();
-        }
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
-        app.UseStaticFiles();
-        app.UseRouting();
-        app.UseCors(access => access.AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowAnyOrigin());
+            app.UseStaticFiles();
+            app.UseRouting();
+            app.UseCors(access => access.AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin());
 
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
-        });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+            });
 
         }
     }
