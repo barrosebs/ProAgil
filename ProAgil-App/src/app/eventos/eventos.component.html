@@ -32,7 +32,7 @@
       <td>
         <img
           *ngIf="mostrarImagem"
-          src="http://localhost:5000/img/{{ evento.img }}"
+          src="http://localhost:5000/img/{{ evento.imagemURL }}"
           alt="imagem não encontrada"
           [style.width.px]="imagemLargura"
           [style.margin.px]="imagemMargem"
@@ -58,3 +58,4 @@
     </tr>
   </tfoot>
 </table>
+{{ eventos[0] | json }}
