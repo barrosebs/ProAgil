@@ -15,7 +15,7 @@
     <tr>
       <th>
         <button class="btn btn-outline-dark" (click)="alternarImagem()">
-          Mostrar Imagem
+          {{ mostrarImagem ? "Ocultar" : "Mostrar" }}
         </button>
       </th>
       <th>#</th>
@@ -31,7 +31,8 @@
     <tr *ngFor="let evento of eventosFiltrados">
       <td>
         <img
-          *ngIf="mostrarImagem"
+          [collapse]="!mostrarImagem"
+          [isAnimated]="true"
           src="http://localhost:5000/img/{{ evento.imagemURL }}"
           alt="imagem não encontrada"
           [style.width.px]="imagemLargura"
