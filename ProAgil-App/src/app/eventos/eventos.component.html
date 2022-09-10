@@ -1,18 +1,20 @@
 <div class="form-inline">
   <div class="form-group mb-2">
-<label class="mr-2">Filtro:</label>
+    <label class="mr-2">Filtro:</label>
 
-    <input type="text" class="form-control mr-2" placeholder="buscar"
-    [(ngModel)]="filtroLista"
-    >
+    <input
+      type="text"
+      class="form-control mr-2"
+      placeholder="buscar"
+      [(ngModel)]="filtroLista"
+    />
   </div>
 </div>
 <table class="table table-striped">
   <thead class="thead-light">
     <tr>
       <th>
-        <button class="btn btn-outline-dark"
-        (click)="alternarImagem()">
+        <button class="btn btn-outline-dark" (click)="alternarImagem()">
           Mostrar Imagem
         </button>
       </th>
@@ -28,18 +30,20 @@
   <tbody *ngIf="eventos && eventos.length">
     <tr *ngFor="let evento of eventosFiltrados">
       <td>
-        <img *ngIf="mostrarImagem" 
-        src="http://localhost:5000/img/{{evento.img}}" alt=" >>não encontrada"
-        [style.width.px] = "imagemLargura"
-        [style.margin.px] = "imagemMargem"
-        >
+        <img
+          *ngIf="mostrarImagem"
+          src="http://localhost:5000/img/{{ evento.img }}"
+          alt="imagem não encontrada"
+          [style.width.px]="imagemLargura"
+          [style.margin.px]="imagemMargem"
+        />
       </td>
-      <td>{{evento.eventoId}}</td>
-      <td>{{evento.tema}}</td>
-      <td>{{evento.local}}</td>
-      <td>{{evento.dataEvento}}</td>
-      <td>{{evento.qtdPessoas}}</td>
-      <td>{{evento.lote | uppercase}}</td>
+      <td>{{ evento.eventoId }}</td>
+      <td>{{ evento.tema }}</td>
+      <td>{{ evento.local }}</td>
+      <td>{{ evento.dataEvento }}</td>
+      <td>{{ evento.qtdPessoas }}</td>
+      <td>{{ evento.lote | uppercase }}</td>
       <td>
         <button class="btn btn-success"></button>
         <button class="btn btn-danger"></button>
@@ -49,9 +53,7 @@
   <tfoot *ngIf="!eventos.length">
     <tr>
       <td colspan="7" class="text-center">
-       <h4>
-        Nenhum evento encontrado!
-       </h4>
+        <h4>Nenhum evento encontrado!</h4>
       </td>
     </tr>
   </tfoot>
