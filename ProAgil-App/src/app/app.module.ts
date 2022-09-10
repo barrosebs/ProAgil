@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { NavComponent } from './nav/nav.component';
 
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -18,7 +21,9 @@ import { NavComponent } from './nav/nav.component';
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      BrowserAnimationsModule,
+      CollapseModule.forRoot()
    ],
    providers: [],
    bootstrap: [

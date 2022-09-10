@@ -1,6 +1,6 @@
 {
   "name": "pro-agil-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
@@ -21,6 +21,7 @@
     "@angular/router": "~12.2.16",
     "@fortawesome/fontawesome-free": "^5.13.0",
     "bootstrap": "^4.4.1",
+    "ngx-bootstrap": "^7.1.2",
     "rxjs": "~6.6.7",
     "zone.js": "~0.11.4"
   },
