@@ -42,7 +42,7 @@
       <td>{{ evento.eventoId }}</td>
       <td>{{ evento.tema }}</td>
       <td>{{ evento.local }}</td>
-      <td>{{ evento.dataEvento }}</td>
+      <td>{{ evento.dataEvento | DateTimeFormatPipe }}</td>
       <td>{{ evento.qtdPessoas }}</td>
       <td>{{ evento.lote | uppercase }}</td>
       <td>
@@ -59,4 +59,4 @@
     </tr>
   </tfoot>
 </table>
-{{ eventos[0] | json }}
+<!--{{ eventos[0] | json }} -->>
