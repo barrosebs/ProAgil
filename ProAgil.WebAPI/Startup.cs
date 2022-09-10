@@ -32,20 +32,21 @@ namespace ProAgil.WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+           if (env.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
 
-            //app.UseHttpsRedirection();
-            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());//corrigindo o  acesso ao cors
-            app.UseFileServer();//para liberar o inserção de img no server
-            app.UseMvc();
+        app.UseStaticFiles();
+        app.UseRouting();
+        app.UseCors(access => access.AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowAnyOrigin());
+
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+        });
 
         }
     }
