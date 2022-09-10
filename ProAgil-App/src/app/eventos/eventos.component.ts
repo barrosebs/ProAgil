@@ -39,7 +39,7 @@ export class EventosComponent implements OnInit {
     this.mostrarImagem = !this.mostrarImagem;
   }
   getEventos() {
-    this.eventos = this.http.get('http://localhost:5000/api/values').subscribe(
+    this.eventos = this.http.get('http://localhost:5000/api/evento').subscribe(
       response => {
         this.eventos = response;
         console.log(this.eventos);
