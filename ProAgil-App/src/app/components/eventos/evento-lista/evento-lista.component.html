@@ -1,3 +1,4 @@
+<app-titulo [title]="'Eventos'" [iconClass]="'fas fa-list fa-2x'"></app-titulo>
 <div class="form-inline">
   <div class="form-group mb-2">
     <label class="mr-2">Filtro:</label>
@@ -8,6 +9,14 @@
       placeholder="buscar"
       [(ngModel)]="filtroLista"
     />
+    <a
+      class="d-flex btn btn-outline-primary"
+      routerLink="/eventos/detalhes"
+      title="Novo"
+    >
+      <i class="fa fa-plus-circle my-1"> Novo</i>
+      <b class="ml-1 d-nome d-sm-block"></b>
+    </a>
   </div>
 </div>
 <table class="table table-striped">
@@ -59,4 +68,7 @@
     </tr>
   </tfoot>
 </table>
-<!--{{ eventos[0] | json }} -->>
+
+<i class="bi bi-people-fill"></i>
+<i class="fa-solid fa-people-group"></i>
+<!--{{ eventos[0] | json }} -->

@@ -1,25 +1,25 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+
 @Component({
-  selector: 'app-eventos',
-  templateUrl: './eventos.component.html',
-  styleUrls: ['./eventos.component.css']
+  selector: 'app-evento-lista',
+  templateUrl: './evento-lista.component.html',
+  styleUrls: ['./evento-lista.component.css']
 })
+export class EventoListaComponent implements OnInit {
 
-export class EventosComponent implements OnInit {
-
-  private _filtroLista: any;
-
-  eventosFiltrados: any = [];
-  eventos: any = [];
-  imagemLargura = 80;
-  imagemMargem = 2;
-  mostrarImagem = false;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getEventos();
   }
+  private _filtroLista: any;
+
+  public eventosFiltrados: any = [];
+  eventos: any = [];
+  imagemLargura = 80;
+  imagemMargem = 2;
+  mostrarImagem = false;
 
   public get filtroLista(): string{
     return this._filtroLista;
@@ -50,4 +50,5 @@ export class EventosComponent implements OnInit {
         console.log(error);
       });
   }
+
 }
