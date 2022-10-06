@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-evento-lista',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./evento-lista.component.css']
 })
 export class EventoListaComponent implements OnInit {
-
+  @Input() titulo = 'Lista';
   constructor(private http: HttpClient) { }
 
   ngOnInit() {

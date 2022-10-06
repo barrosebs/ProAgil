@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { EventoDetalheComponent } from './components/eventos/evento-detalhe/evento-detalhe.component';
 import { EventoListaComponent } from './components/eventos/evento-lista/evento-lista.component';
+import { PalestranteComponent } from './components/palestrante/palestrante.component';
+import { ContatoComponent } from './components/contato/contato.component';
 
 @NgModule({
    declarations: [
@@ -23,7 +25,9 @@ import { EventoListaComponent } from './components/eventos/evento-lista/evento-l
       NavComponent,
       DateTimeFormatPipe,
       EventoDetalheComponent,
-      EventoListaComponent
+      EventoListaComponent,
+      PalestranteComponent,
+      ContatoComponent
    ],
    imports: [
       BrowserModule,

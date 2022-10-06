@@ -1,3 +1,5 @@
+import { ContatoComponent } from './components/contato/contato.component';
+import { PalestranteComponent } from './components/palestrante/palestrante.component';
 import { EventoListaComponent } from './components/eventos/evento-lista/evento-lista.component';
 import { EventoDetalheComponent } from './components/eventos/evento-detalhe/evento-detalhe.component';
 import { EventosComponent } from './components/eventos/eventos.component';
@@ -6,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+  {path: 'eventos', redirectTo: 'eventos/lista'},
   {
     path: 'eventos', component: EventosComponent,
     children: [
@@ -13,7 +16,9 @@ const routes: Routes = [
       {path: 'detalhes', component: EventoDetalheComponent},
       {path: 'lista', component: EventoListaComponent},
     ]
-  }
+  },
+  {path: 'palestrantes', component: PalestranteComponent},
+  {path: 'contatos', component: ContatoComponent},
 ];
 
 @NgModule({
