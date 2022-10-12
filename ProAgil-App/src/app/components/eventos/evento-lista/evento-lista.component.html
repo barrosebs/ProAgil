@@ -9,12 +9,11 @@
       [(ngModel)]="filtroLista"
     />
     <a
-      class="d-flex btn btn-outline-primary"
+      class="d-flex btn btn-primary"
       routerLink="/eventos/detalhes"
       title="Novo"
     >
-      <i class="fa fa-plus-circle my-1"> Novo</i>
-      <b class="ml-1 d-nome d-sm-block"></b>
+      <i class="fa fa-plus-circle mb-1"> Novo</i>
     </a>
   </div>
 </div>
@@ -54,8 +53,13 @@
       <td>{{ evento.qtdPessoas }}</td>
       <td>{{ evento.lote | uppercase }}</td>
       <td>
-        <button class="btn btn-success" aria-label="Aria Name">Salvar</button>
-        <button class="btn btn-danger" aria-label="Aria Name">Cancel</button>
+        <button class="btn btn-info" aria-label="Aria Name">
+          <i class="fa fa-save"></i> Editar
+        </button>
+        |
+        <button class="btn btn-danger" aria-label="Aria Name">
+          <i class="fa fa-trash"></i> Excluir
+        </button>
       </td>
     </tr>
   </tbody>

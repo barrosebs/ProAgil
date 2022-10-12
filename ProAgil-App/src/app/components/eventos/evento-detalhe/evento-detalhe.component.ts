@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EventoDetalheComponent implements OnInit {
   @Input() titulo = 'Detalhes';
-
+  @Input() subtitulo = 'Informações dos Eventos'
   constructor() { }
 
   ngOnInit(): void {
